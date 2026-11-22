@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paws Off Cleaning Co. | Cleaning Services | Edmonton, Alberta</title>
+<meta name="description" content="Paws Off Cleaning Company is a residential and commercial cleaning business in Edmonton & Area!">
+<link rel="icon" type="image/png" href="images/icon-lucy.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Karla:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mint:#A4D4CF;
+  --mint-pale:#E6F3F1;
+  --mint-ice:#F4FAF9;
+  --teal:#1F8178;
+  --teal-bright:#3CB5AA;
+  --pink:#DB6487;
+  --pink-deep:#B93E66;
+  --orange:#F7942D;
+  --peach:#FAB383;
+  --ink:#1C110D;
+  --ink-soft:#4A3A33;
+  --white:#FFFFFF;
+  --display:"Bowlby One","Arial Black",Impact,sans-serif;
+  --body:"Karla","Helvetica Neue",Arial,sans-serif;
+  --wrap:1220px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;font-family:var(--body);color:var(--ink);background:var(--white);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;line-height:1.02;margin:0;letter-spacing:.005em}
+p{margin:0 0 1em}
+.wrap{width:min(var(--wrap),100% - 48px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* sparkle — the four-point star from the logo */
+.spark{position:absolute;width:var(--s,40px);aspect-ratio:1;background:var(--c,var(--mint));
+  clip-path:polygon(50% 0,58% 42%,100% 50%,58% 58%,50% 100%,42% 58%,0 50%,42% 42%);pointer-events:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:800;font-size:16px;text-decoration:none;
+  padding:15px 26px;border-radius:999px;border:2.5px solid var(--ink);transition:transform .15s ease,box-shadow .15s ease;cursor:pointer}
+.btn-pink{background:var(--pink-deep);color:#fff;box-shadow:4px 4px 0 var(--ink)}
+.btn-pink:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn-line{background:#fff;color:var(--ink)}
+.btn-line:hover{background:var(--mint-pale)}
+
+/* ============ HEADER ============ */
+.topline{background:var(--ink);color:#fff;font-size:14.5px}
+.topline .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:9px 0;flex-wrap:wrap}
+.topline a{text-decoration:none;font-weight:700;color:var(--peach)}
+.topline a:hover{text-decoration:underline}
+.topline .open{display:flex;align-items:center;gap:8px}
+.topline .dot{width:9px;height:9px;border-radius:50%;background:var(--teal-bright);box-shadow:0 0 0 3px rgba(60,181,170,.3)}
+
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:2.5px solid var(--ink)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:84px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:96px;height:auto;margin-top:34px;filter:drop-shadow(0 3px 0 rgba(28,17,13,.12))}
+nav.main ul{list-style:none;display:flex;gap:6px;margin:0;padding:0}
+nav.main a{display:block;text-decoration:none;font-weight:700;font-size:16px;padding:10px 16px;border-radius:999px}
+nav.main a:hover{background:var(--mint-pale)}
+nav.main a[aria-current]{background:var(--mint)}
+.menu-btn{display:none;background:none;border:2.5px solid var(--ink);border-radius:12px;width:48px;height:44px;cursor:pointer}
+.menu-btn span{display:block;width:20px;height:2.5px;background:var(--ink);margin:4px auto}
+
+/* ============ HERO ============ */
+.hero{position:relative;overflow:hidden;background:var(--mint-ice)}
+.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;align-items:center;gap:40px;padding:80px 0 96px;position:relative}
+.hero h1{font-size:clamp(48px,7.2vw,104px);line-height:.92;color:var(--ink);text-shadow:4px 4px 0 var(--mint)}
+.hero-lede{font-size:clamp(18px,1.5vw,20px);max-width:33em;margin:28px 0 34px;color:var(--ink-soft)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+.guarantee{display:flex;align-items:center;gap:14px;margin-top:40px;font-weight:700;max-width:28em;line-height:1.35}
+.seal{flex:none;width:84px;height:84px;border-radius:50%;background:var(--orange);color:var(--ink);display:grid;place-items:center;text-align:center;
+  font-family:var(--display);font-size:20px;line-height:.9;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transform:rotate(-8deg)}
+.seal small{display:block;font-family:var(--body);font-weight:800;font-size:9.5px;letter-spacing:.02em;margin-top:2px}
+
+/* hexagon stage */
+.stage{position:relative;aspect-ratio:1/1;width:min(560px,100%);justify-self:center}
+.hex{position:absolute;inset:4%;clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%);background:var(--teal-bright)}
+.hex-in{position:absolute;inset:6.5%;clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%);overflow:hidden;
+  background:repeating-conic-gradient(from 0deg at 50% 50%,var(--mint) 0 7.5deg,var(--mint-pale) 7.5deg 15deg)}
+.hex-in img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+.hex-in .fallback{position:absolute;inset:0;display:grid;place-items:center}
+.hex-in .fallback img{width:62%;height:auto;object-fit:contain}
+.stage .badge{position:absolute;z-index:3;width:clamp(74px,8vw,104px);filter:drop-shadow(3px 4px 0 rgba(28,17,13,.85))}
+.stage .b1{top:6%;right:4%;animation:bob 5s ease-in-out infinite}
+.stage .b2{bottom:9%;left:0}
+.ribbon{position:absolute;z-index:4;right:-4%;bottom:3%;background:#fff;border:2.5px solid var(--ink);padding:12px 22px 12px 18px;font-weight:800;font-size:15.5px;
+  transform:rotate(-7deg);box-shadow:5px 5px 0 var(--orange);line-height:1.25;max-width:270px}
+.ribbon b{display:block;font-family:var(--display);font-weight:400;font-size:21px;color:var(--pink-deep)}
+.hero .spark.s1{--s:64px;--c:var(--mint);top:8%;left:46%}
+.hero .spark.s2{--s:30px;--c:var(--teal-bright);top:20%;left:52%}
+.hero .spark.s3{--s:46px;--c:var(--peach);bottom:10%;left:3%}
+.hero .spark.s4{--s:26px;--c:var(--pink);bottom:6%;right:46%}
+@keyframes bob{50%{transform:translateY(-10px) rotate(4deg)}}
+@keyframes twinkle{0%{transform:scale(0) rotate(-45deg);opacity:0}70%{transform:scale(1.2)}100%{transform:scale(1) rotate(0);opacity:1}}
+.hero .spark{animation:twinkle .9s cubic-bezier(.3,1.5,.5,1) both}
+.hero .spark.s2{animation-delay:.15s}.hero .spark.s3{animation-delay:.3s}.hero .spark.s4{animation-delay:.45s}
+
+/* ============ TOWNS ============ */
+.towns{background:var(--teal);color:#fff;border-block:2.5px solid var(--ink)}
+.towns .wrap{display:flex;align-items:center;gap:28px;padding:26px 0;flex-wrap:wrap}
+.towns h2{font-size:22px;color:var(--peach);flex:none}
+.towns ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
+.towns li{font-family:var(--display);font-size:clamp(17px,1.7vw,22px);display:flex;align-items:center;gap:22px}
+.towns li:not(:last-child)::after{content:"";width:14px;height:14px;background:var(--mint);
+  clip-path:polygon(50% 0,58% 42%,100% 50%,58% 58%,50% 100%,42% 58%,0 50%,42% 42%)}
+
+/* ============ ABOUT ============ */
+.about{padding:120px 0 110px;position:relative}
+.about .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
+.arch{position:relative;padding-top:56px}
+.arch .frame{position:relative;aspect-ratio:3/4;border-radius:999px 999px 28px 28px;border:2.5px solid var(--ink);overflow:hidden;
+  background:repeating-linear-gradient(135deg,var(--mint-pale) 0 18px,var(--mint) 18px 36px);box-shadow:-14px 14px 0 var(--pink)}
+.arch .frame>img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+.arch .frame .fallback{position:absolute;inset:0;display:grid;place-items:center}
+.arch .frame .fallback img{width:46%}
+.arch .peek{position:absolute;top:0;left:50%;transform:translateX(-50%);width:132px;z-index:3}
+.arch .note{position:absolute;right:-28px;bottom:42px;z-index:3;background:var(--orange);border:2.5px solid var(--ink);border-radius:18px;padding:14px 18px;
+  font-weight:800;line-height:1.2;max-width:190px;transform:rotate(4deg);box-shadow:4px 4px 0 var(--ink)}
+.about h2{font-size:clamp(40px,4.6vw,66px);margin-bottom:28px}
+.about .lead{font-size:20px;line-height:1.55;color:var(--ink);font-weight:500}
+.about p{color:var(--ink-soft);max-width:36em}
+.touch{display:grid;grid-template-columns:repeat(4,1fr);margin:34px 0 30px;border:2.5px solid var(--ink);border-radius:20px;overflow:hidden;background:#fff}
+.touch div{padding:18px 14px;text-align:center;font-family:var(--display);font-size:17px}
+.touch div+div{border-left:2.5px solid var(--ink)}
+.touch div:nth-child(1){background:var(--mint)}
+.touch div:nth-child(2){background:var(--peach)}
+.touch div:nth-child(3){background:#F3B5C7}
+.touch div:nth-child(4){background:var(--mint-pale)}
+.touch-cap{font-size:15px;color:var(--ink-soft);margin-top:-18px}
+
+/* ============ SERVICES ============ */
+.services{background:var(--ink);color:#fff;padding:110px 0 120px;position:relative;overflow:hidden}
+.services::before{content:"";position:absolute;width:900px;height:900px;right:-360px;top:-380px;
+  background:repeating-conic-gradient(from 0deg,rgba(164,212,207,.09) 0 7.5deg,transparent 7.5deg 15deg);border-radius:50%}
+.services .head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:44px;position:relative}
+.services h2{font-size:clamp(44px,5.4vw,78px);color:var(--mint)}
+.services .head p{max-width:27em;color:#D9CFCB;margin:0}
+.switch{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;position:relative}
+.switch button{display:flex;align-items:center;gap:16px;text-align:left;font:inherit;color:var(--ink);background:#2B1E19;color:#fff;
+  border:2.5px solid #5A4740;border-radius:22px;padding:16px 22px;cursor:pointer;transition:background .2s,border-color .2s}
+.switch button img{width:58px;flex:none}
+.switch button strong{display:block;font-family:var(--display);font-weight:400;font-size:clamp(18px,2vw,24px);line-height:1.05}
+.switch button span{display:block;font-size:14.5px;opacity:.8;margin-top:4px}
+.switch button[aria-selected="true"]{background:var(--mint);border-color:var(--mint);color:var(--ink)}
+.switch button[aria-selected="true"] span{opacity:1}
+.panel{background:#fff;color:var(--ink);border-radius:30px;padding:16px;display:grid;grid-template-columns:.9fr 1.6fr;gap:16px;position:relative}
+.panel[hidden]{display:none}
+.panel .pic{border-radius:20px;overflow:hidden;position:relative;min-height:420px;
+  background:repeating-conic-gradient(from 0deg at 50% 60%,var(--mint) 0 7.5deg,var(--mint-pale) 7.5deg 15deg)}
+.panel .pic>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.panel .pic .fallback{position:absolute;inset:0;display:grid;place-items:center}
+.panel .pic .fallback img{width:40%}
+.panel .pic .freq{position:absolute;z-index:2;left:14px;right:14px;bottom:14px;background:#fff;border:2.5px solid var(--ink);border-radius:16px;padding:14px 16px}
+.freq h3{font-family:var(--body);font-weight:800;font-size:15px;margin-bottom:8px}
+.freq ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.freq li{font-size:13.5px;font-weight:700;background:var(--mint-pale);border-radius:999px;padding:4px 11px}
+.rooms{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:22px 26px 10px}
+.room{padding:0 18px 22px 0}
+.room h4{font-size:22px;display:flex;align-items:center;gap:10px;margin-bottom:10px;color:var(--teal)}
+.room h4::before{content:"";width:16px;height:16px;background:var(--pink);flex:none;
+  clip-path:polygon(50% 0,58% 42%,100% 50%,58% 58%,50% 100%,42% 58%,0 50%,42% 42%)}
+.room ul{list-style:none;padding:0;margin:0}
+.room li{padding:7px 0 7px 30px;position:relative;border-bottom:1.5px dashed #D5E6E3;font-size:16px;line-height:1.35}
+.room li::before{content:"";position:absolute;left:0;top:8px;width:20px;height:20px;border-radius:50%;background:var(--teal-bright)}
+.room li::after{content:"";position:absolute;left:7px;top:11px;width:5px;height:10px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.cuddle::before{left:6px!important;background:var(--pink)!important}
+.cuddle::after{left:13px!important}
+.room.wide{grid-column:1/-1}
+.room.wide ul{columns:2;column-gap:28px}
+.room.wide li{break-inside:avoid}
+.cuddle{background:#FDE6EE;border-radius:10px;padding-left:34px!important;font-weight:800;color:var(--pink-deep);border-bottom:none!important;margin:4px 0}
+.cuddle img{display:inline-block;width:30px;vertical-align:middle;margin-left:6px}
+
+details.covid{margin-top:22px;border:2px solid #5A4740;border-radius:20px;color:#E6DDD9;position:relative}
+details.covid summary{cursor:pointer;padding:16px 22px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.covid summary::-webkit-details-marker{display:none}
+details.covid summary::after{content:"+";font-family:var(--display);font-size:22px;line-height:1;color:var(--mint)}
+details.covid[open] summary::after{content:"\2212"}
+details.covid .body{padding:0 22px 20px;font-size:15px;line-height:1.55;max-width:70em}
+details.covid ul{padding-left:20px}
+details.covid li{margin-bottom:6px}
+
+/* ============ COMMITMENT ============ */
+.commit{background:var(--pink);position:relative;overflow:hidden;border-bottom:2.5px solid var(--ink)}
+.commit::before{content:"";position:absolute;inset:-50%;background:repeating-conic-gradient(from 0deg at 50% 50%,rgba(255,255,255,.11) 0 6deg,transparent 6deg 12deg)}
+.commit .wrap{position:relative;padding:110px 0;display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center}
+.commit .lucy{width:180px;filter:drop-shadow(5px 6px 0 var(--ink))}
+.commit blockquote{margin:0;font-family:var(--display);font-size:clamp(32px,4.2vw,60px);line-height:1.02;color:#fff;text-shadow:3px 3px 0 var(--ink)}
+.commit p{margin:24px 0 0;font-size:19px;font-weight:700;color:var(--ink);max-width:38em}
+
+/* ============ CONTACT ============ */
+.contact{padding:120px 0;background:var(--mint-ice)}
+.ticket{display:grid;grid-template-columns:.8fr 1.2fr;border:2.5px solid var(--ink);border-radius:32px;overflow:hidden;background:#fff;box-shadow:10px 10px 0 var(--teal-bright)}
+.ticket .left{background:var(--mint);display:grid;place-items:center;padding:40px;position:relative;border-right:2.5px dashed var(--ink)}
+.ticket .left img{width:min(330px,100%)}
+.ticket .right{padding:56px 56px 50px}
+.ticket h2{font-size:clamp(38px,4.4vw,62px);margin-bottom:20px}
+.ticket p{font-size:19px;color:var(--ink-soft);max-width:30em}
+.mail{display:inline-block;font-family:var(--display);font-size:clamp(19px,2.4vw,32px);color:var(--teal);text-decoration:none;word-break:break-all;
+  border-bottom:4px solid var(--peach);margin:8px 0 30px;line-height:1.2}
+.mail:hover{border-color:var(--pink)}
+.mail-label{font-weight:800;font-size:15px;display:block;color:var(--ink)}
+.social{display:flex;gap:12px;align-items:center;margin-top:30px;font-weight:700}
+.social a img{width:40px;height:40px;transition:transform .15s}
+.social a:hover img{transform:translateY(-3px)}
+
+/* ============ FOOTER ============ */
+footer{background:var(--mint);border-top:2.5px solid var(--ink);position:relative;overflow:hidden}
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:48px;align-items:center;padding:54px 0 40px}
+footer .flogo{width:130px}
+footer nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 26px}
+footer nav a{font-family:var(--display);font-size:20px;text-decoration:none}
+footer nav a:hover{color:var(--pink-deep)}
+footer .fmail{display:block;margin-top:14px;font-weight:700}
+footer .top{font-weight:800;text-decoration:none;border:2.5px solid var(--ink);border-radius:999px;padding:10px 18px;background:#fff;display:inline-block}
+footer .top:hover{background:var(--peach)}
+.bottom{border-top:2px solid rgba(28,17,13,.25)}
+.bottom .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 0 22px;font-size:15px;grid-template-columns:none}
+.bottom a{font-weight:800}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1020px){
+  .hero .wrap{grid-template-columns:1fr;padding:56px 0 76px}
+  .stage{width:min(500px,92%)}
+  .about .wrap{grid-template-columns:1fr;gap:56px}
+  .arch{max-width:420px}
+  .panel{grid-template-columns:1fr}
+  .panel .pic{min-height:340px}
+  .commit .wrap{grid-template-columns:1fr;gap:28px;text-align:left}
+  .commit .lucy{width:130px}
+  .ticket{grid-template-columns:1fr}
+  .ticket .left{border-right:none;border-bottom:2.5px dashed var(--ink)}
+  footer .wrap{grid-template-columns:1fr;gap:26px}
+}
+@media (max-width:780px){
+  nav.main{position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:2.5px solid var(--ink);display:none}
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;padding:12px 24px 18px}
+  .menu-btn{display:block}
+  .header-cta{display:none}
+  .brand img{width:64px;margin-top:16px}
+  header.site .wrap{height:72px}
+  .topline .wrap{justify-content:center;text-align:center}
+  .topline .hide-sm{display:none}
+  .switch{grid-template-columns:1fr}
+  .rooms{grid-template-columns:1fr;padding:18px 10px 4px}
+  .room.wide ul{columns:1}
+  .touch{grid-template-columns:1fr 1fr}
+  .touch div:nth-child(3){border-left:none}
+  .touch div:nth-child(n+3){border-top:2.5px solid var(--ink)}
+  .ribbon{right:0;bottom:0;font-size:14px}
+  .arch .note{right:-6px}
+  .ticket .right{padding:36px 24px}
+  .about,.services,.contact{padding:84px 0}
+  .commit .wrap{padding:80px 0}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="topline">
+  <div class="wrap">
+    <span class="open"><span class="dot" aria-hidden="true"></span>Our books are open and we’re taking on new clients</span>
+    <span class="hide-sm">Email us: <a href="mailto:pawsoffcleaning@gmail.com?subject=Cleaning%20Inquiry!">pawsoffcleaning@gmail.com</a></span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Paws Off Cleaning Co. home"><img src="images/logo.png" alt="Paws Off Cleaning Co. logo"></a>
+    <nav class="main" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#top" aria-current="page">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-pink header-cta" href="mailto:pawsoffcleaning@gmail.com?subject=Cleaning%20Inquiry!">Get your free quote</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span><span class="spark s4"></span>
+  <div class="wrap">
+    <div>
+      <h1>Ready to tackle any mess.</h1>
+      <p class="hero-lede">Paws Off Cleaning Company is a residential and commercial cleaning business in Edmonton, Alberta. Customized cleaning from a highly trained professional team, with that personal, flexible, consistent and affordable “Paws Off” touch.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-pink" href="mailto:pawsoffcleaning@gmail.com?subject=Cleaning%20Inquiry!">Get your free quote</a>
+        <a class="btn btn-line" href="#services">See our services</a>
+      </div>
+      <div class="guarantee">
+        <div class="seal">100%<small>satisfaction</small></div>
+        <span>Every clean is backed by our 100% satisfaction guarantee.</span>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="hex"></div>
+      <div class="hex-in">
+        <div class="fallback"><img src="images/logo.png" alt=""></div>
+        <img src="images/hero-home.jpg" alt="Paws Off cleaner tidying a bright Edmonton living room" onerror="this.remove()">
+      </div>
+      <img class="badge b1" src="images/icon-duster.png" alt="">
+      <img class="badge b2" src="images/icon-bottle.png" alt="">
+      <div class="ribbon"><b>Books are open!</b>Taking on new clients now</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOWNS -->
+<section class="towns" aria-label="Service area">
+  <div class="wrap">
+    <h2>Edmonton &amp; area</h2>
+    <ul>
+      <li>St. Albert</li><li>Spruce Grove</li><li>Stony Plain</li><li>Fort Saskatchewan</li><li>Sherwood Park</li><li>Leduc</li><li>Beaumont</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="arch">
+      <img class="peek" src="images/icon-lucy.png" alt="">
+      <div class="frame">
+        <div class="fallback"><img src="images/icon-bottle.png" alt=""></div>
+        <img src="images/about.jpg" alt="Paws Off cleaner with a family dog at home" onerror="this.remove()">
+      </div>
+      <div class="note">Small but mighty, fast to reply</div>
+    </div>
+    <div>
+      <h2>About us</h2>
+      <p class="lead">What makes Paws Off different than the larger cleaning companies is our unique business model. We are small but mighty.</p>
+      <p>Communication is fast and efficient, and we are dependable and reliable. We want our clients to know that they can not only trust the results of our cleaning service, but feel like they are treated with the utmost respect.</p>
+      <div class="touch" aria-label="The Paws Off touch">
+        <div>Personal</div><div>Flexible</div><div>Consistent</div><div>Affordable</div>
+      </div>
+      <p class="touch-cap">That’s the “Paws Off” touch.</p>
+      <p>Life can get busy and stressful. Whether it’s juggling your career, family or your beloved fur babies, our mission is to help with your cleaning needs, giving you peace of mind and more free time to enjoy the things that matter the most.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head">
+      <h2>Our services</h2>
+      <p>With our highly trained professional staff, we listen to your needs and make sure you receive the best possible customized clean.</p>
+    </div>
+
+    <div class="switch" role="tablist" aria-label="Service type">
+      <button role="tab" id="t-res" aria-selected="true" aria-controls="p-res">
+        <img src="images/icon-bottle.png" alt="">
+        <span><strong>Residential</strong><span>Weekly, bi-weekly, monthly, move out &amp; one time cleaning</span></span>
+      </button>
+      <button role="tab" id="t-com" aria-selected="false" aria-controls="p-com" tabindex="-1">
+        <img src="images/icon-duster.png" alt="">
+        <span><strong>Commercial, Air B&amp;B &amp; Real Estate</strong><span>Commercial, Air B&amp;B, show home, office and pre/post event or conference</span></span>
+      </button>
+    </div>
+
+    <!-- Residential -->
+    <div class="panel" id="p-res" role="tabpanel" aria-labelledby="t-res">
+      <div class="pic">
+        <div class="fallback"><img src="images/icon-bottle.png" alt=""></div>
+        <img src="images/residential.jpg" alt="Freshly cleaned home kitchen" onerror="this.remove()">
+        <div class="freq">
+          <h3>Booking options</h3>
+          <ul><li>Weekly</li><li>Bi-weekly</li><li>Monthly</li><li>Move out</li><li>One time</li></ul>
+        </div>
+      </div>
+      <div class="rooms">
+        <div class="room"><h4>Kitchen</h4><ul>
+          <li>Outside &amp; top of stove</li><li>Outside oven</li><li>Outside cupboards, countertops &amp; back-splash</li><li>Front &amp; top of fridge</li><li>Inside &amp; outside of microwave</li></ul></div>
+        <div class="room"><h4>Bathroom</h4><ul>
+          <li>Tub &amp; shower walls scrubbed</li><li>Sinks washed</li><li>Toilets washed inside/out/behind</li><li>Mirrors</li><li>Cupboards, vanity &amp; drawer exteriors</li><li>Dusting of light fixtures</li></ul></div>
+        <div class="room"><h4>Bedrooms</h4><ul><li>Dusting, beds made</li></ul></div>
+        <div class="room"><h4>Floors</h4><ul><li>Vacuum &amp; mop throughout entire house</li></ul></div>
+        <div class="room wide"><h4>Services also include</h4><ul>
+          <li>Wall washing</li><li>Dusting of baseboards</li><li>Interior windows, window sills &amp; door frames</li><li>Dusting throughout</li><li>Mirrors</li><li>Trash removal</li><li>Door knobs &amp; light switches wiped</li>
+          <li class="cuddle">Dog and kitty cuddling <img src="images/icon-lucy.png" alt=""></li></ul></div>
+      </div>
+    </div>
+
+    <!-- Commercial -->
+    <div class="panel" id="p-com" role="tabpanel" aria-labelledby="t-com" hidden>
+      <div class="pic">
+        <div class="fallback"><img src="images/icon-duster.png" alt=""></div>
+        <img src="images/commercial.jpg" alt="Clean, bright office space" onerror="this.remove()">
+        <div class="freq">
+          <h3>Booking options</h3>
+          <ul><li>Weekly</li><li>Bi-weekly</li><li>Monthly</li><li>Show homes</li><li>Offices</li><li>Pre/post event</li></ul>
+        </div>
+      </div>
+      <div class="rooms">
+        <div class="room"><h4>Kitchen</h4><ul>
+          <li>Outside of stove</li><li>Cupboards, counter tops &amp; back-splash</li><li>Front &amp; top of fridge, inside &amp; outside of microwave</li></ul></div>
+        <div class="room"><h4>Bathroom</h4><ul>
+          <li>Tub &amp; shower walls scrubbed</li><li>Sinks washed</li><li>Toilets washed inside/out/behind</li><li>Mirrors</li><li>Cupboards, vanity &amp; drawer exteriors</li><li>Dusting of light fixtures</li></ul></div>
+        <div class="room wide"><h4>Services also include</h4><ul>
+          <li>Interior windows, window sills &amp; door frames</li><li>Mirrors</li><li>Trash/clutter removal</li><li>Vacuum and mop tile, ceramic, vinyl, and linoleum floors</li><li>Dust and wipe furniture</li><li>Dust computers, desks, filing cabinets, and clean telephones</li><li>Dust blinds, clean window sills &amp; inside windows</li><li>Dust baseboards, vents &amp; vacuum mats</li><li>Dust light fixtures &amp; wipe down light switches, doors, door handles</li></ul></div>
+      </div>
+    </div>
+
+    <details class="covid">
+      <summary>COVID-19 outbreak: updates &amp; next steps (May 24, 2021)</summary>
+      <div class="body">
+        <p>Due to the high demands of our service at this time, Paws Off Cleaning Co is currently continuing business as usual. As per the government of Alberta, our company falls under cleaning and sanitation services, as well as provides the support for safe operation of residences and essential businesses. We are following Alberta Health Services protocol and procedures outlined below, in addition to maintaining proper risk mitigation measures.</p>
+        <ul>
+          <li>We are using disposable cloths. After each clean, cloths are disposed of and a new set of cloths and gloves is used for the next clean.</li>
+          <li>Our mop is disinfected and washed daily.</li>
+          <li>We are cleaning around individuals working from home with or without children, but we will not be entering homes where 7 or more people live.</li>
+          <li>If clients are home, we will wear masks and/or maintain a physical distance of 6 feet or more at all times.</li>
+          <li>We will not be cleaning residences or businesses where individuals over the age of 70 live or work. This includes seniors homes and complexes.</li>
+          <li>Current clients have not traveled outside of the country within the past one (1) month and none are self isolating. Any new clients are thoroughly screened and asked about international travel, quarantine, reasons for self isolation, COVID-19 exposure, confirmed cases, number of people living in the household, and current occupations.</li>
+          <li>If a client displays symptoms of COVID-19 or is advised by Alberta Health Services that they have been in close contact with someone who has tested positive, we will not enter that client’s home until their quarantine period is over and they have received a negative COVID-19 test. Proof of negative test results may be required.</li>
+          <li>Cancellation charges will not be implemented for clients who need a COVID-19 test, but if a regular bi-weekly or monthly clean is missed because of the test overlapping with the booking, the following clean is subject to an increased rate due to a lack of professional maintenance.</li>
+          <li>Please give us at least 72 hours notice if you need a COVID test or are required to isolate so we can rebook your clean.</li>
+        </ul>
+        <p>We know that the world is confusing and uncertain right now, but life isn’t slowing down. If you need extra help or cleaning advice, please do not hesitate to contact us. We are all in this together!</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- COMMITMENT -->
+<section class="commit" aria-label="Our commitment">
+  <div class="wrap">
+    <img class="lucy" src="images/icon-lucy.png" alt="">
+    <div>
+      <blockquote>Our commitment to you is to ensure nothing is overlooked.</blockquote>
+      <p>Whether you’re a weekly, bi-weekly, monthly, one time only or deep/move out clean, you’re the home we care about.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="ticket">
+      <div class="left"><img src="images/logo.png" alt="Paws Off Cleaning Co. logo"></div>
+      <div class="right">
+        <h2>Contact</h2>
+        <p>Our books are currently open and we’re taking on new clients! If you’re interested, contact us to get your free quote.</p>
+        <span class="mail-label">Email</span>
+        <a class="mail" href="mailto:pawsoffcleaning@gmail.com?subject=Cleaning%20Inquiry!">pawsoffcleaning@gmail.com</a>
+        <div><a class="btn btn-pink" href="mailto:pawsoffcleaning@gmail.com?subject=Cleaning%20Inquiry!">Get your free quote</a></div>
+        <div class="social">
+          <a href="https://www.facebook.com/pawsoffcleaningYEG" target="_blank" rel="noopener" aria-label="Paws Off on Facebook"><img src="images/facebook.png" alt=""></a>
+          <a href="https://www.instagram.com/pawsoffcleaningyeg/" target="_blank" rel="noopener" aria-label="Paws Off on Instagram"><img src="images/instagram.png" alt=""></a>
+          <span>@pawsoffcleaningyeg</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="flogo" src="images/logo.png" alt="Paws Off Cleaning Co.">
+    <div>
+      <nav aria-label="Footer"><ul>
+        <li><a href="#top">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li>
+      </ul></nav>
+      <a class="fmail" href="mailto:pawsoffcleaning@gmail.com">pawsoffcleaning@gmail.com</a>
+    </div>
+    <div class="social" style="margin-top:0">
+      <a href="https://www.facebook.com/pawsoffcleaningYEG" target="_blank" rel="noopener" aria-label="Facebook"><img src="images/facebook.png" alt=""></a>
+      <a href="https://www.instagram.com/pawsoffcleaningyeg/" target="_blank" rel="noopener" aria-label="Instagram"><img src="images/instagram.png" alt=""></a>
+      <a class="top" href="#top">Back to top</a>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="wrap">
+      <span>© <span id="yr">2026</span> Paws Off Cleaning Co. Edmonton, Alberta.</span>
+      <span>Design by <a href="https://cleaningdigital.ca/" target="_blank" rel="noopener">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false')})});
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  function pick(t){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on})}
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){pick(t)});
+    t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var n=tabs[(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length];pick(n);n.focus()}})
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
