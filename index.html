@@ -104,7 +104,7 @@ nav.main a[aria-current]{background:var(--mint)}
 .hero .spark.s2{animation-delay:.15s}.hero .spark.s3{animation-delay:.3s}.hero .spark.s4{animation-delay:.45s}
 
 /* ============ TOWNS ============ */
-.towns{background:var(--teal);color:#fff;border-block:2.5px solid var(--ink)}
+.towns{background:var(--teal);color:#fff;border-bottom:2.5px solid var(--ink)}
 .towns .wrap{display:flex;align-items:center;gap:28px;padding:26px 0;flex-wrap:wrap}
 .towns h2{font-size:22px;color:var(--peach);flex:none}
 .towns ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
@@ -115,7 +115,7 @@ nav.main a[aria-current]{background:var(--mint)}
 /* ============ ABOUT ============ */
 .about{padding:120px 0 110px;position:relative}
 .about .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
-.arch{position:relative;padding-top:56px}
+.arch{position:relative;padding-top:74px}
 .arch .frame{position:relative;aspect-ratio:3/4;border-radius:999px 999px 28px 28px;border:2.5px solid var(--ink);overflow:hidden;
   background:repeating-linear-gradient(135deg,var(--mint-pale) 0 18px,var(--mint) 18px 36px);box-shadow:-14px 14px 0 var(--pink)}
 .arch .frame>img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
@@ -262,6 +262,122 @@ footer .top:hover{background:var(--peach)}
   .about,.services,.contact{padding:84px 0}
   .commit .wrap{padding:80px 0}
 }
+
+/* ================= MOTION & GRAPHICS ================= */
+/* hero load sequence */
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block;transform:translateY(105%);animation:rise .9s cubic-bezier(.2,.9,.2,1) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.12s}.hero h1 .ln:nth-child(3)>span{animation-delay:.24s}
+@keyframes rise{to{transform:none}}
+.hero-lede,.hero-ctas,.guarantee{opacity:0;animation:fadeUp .8s .45s ease forwards}
+.hero-ctas{animation-delay:.6s}.guarantee{animation-delay:.75s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.stage{animation:stageIn 1.1s .15s cubic-bezier(.2,1.2,.3,1) backwards}
+@keyframes stageIn{from{opacity:0;transform:scale(.82) rotate(-8deg)}to{opacity:1;transform:none}}
+.stage .badge,.ribbon{animation:pop .7s cubic-bezier(.3,1.6,.5,1) both}
+.stage .b1{animation:pop .7s .7s cubic-bezier(.3,1.6,.5,1) both,bob 5s 1.4s ease-in-out infinite}
+.stage .b2{animation:pop .7s .85s cubic-bezier(.3,1.6,.5,1) both,bob 6s 1.6s ease-in-out infinite reverse}
+.ribbon{animation-delay:1s}
+@keyframes pop{from{opacity:0;transform:scale(.3) rotate(-20deg)}}
+.seal{animation:spinIn 1s .9s cubic-bezier(.3,1.5,.5,1) both}
+@keyframes spinIn{from{transform:rotate(-200deg) scale(.4);opacity:0}to{transform:rotate(-8deg)}}
+
+/* rotating sunburst disc behind the hexagon */
+.halo{position:absolute;inset:-12%;border-radius:50%;z-index:-1;
+  background:repeating-conic-gradient(from 0deg,rgba(250,179,131,.42) 0 6deg,transparent 6deg 15deg);
+  -webkit-mask:radial-gradient(circle,#000 35%,transparent 70%);mask:radial-gradient(circle,#000 35%,transparent 70%);
+  animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.stage{z-index:1}
+/* clean "gleam" sweep across the hero photo */
+.hex-in::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.55) 48%,transparent 60%);transform:translateX(-120%);
+  animation:gleam 6s 1.6s ease-in-out infinite}
+@keyframes gleam{0%{transform:translateX(-120%)}30%,100%{transform:translateX(120%)}}
+
+/* soap bubbles */
+.bubbles{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.bubbles i{position:absolute;bottom:-80px;width:var(--d);height:var(--d);border-radius:50%;left:var(--x);
+  background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.95) 0 9%,rgba(255,255,255,.18) 22%,rgba(164,212,207,.18) 55%,rgba(219,100,135,.28) 78%,rgba(247,148,45,.35) 100%);
+  box-shadow:inset 0 0 0 1.5px rgba(31,129,120,.25);animation:float var(--t) var(--delay) linear infinite;opacity:0}
+@keyframes float{0%{transform:translate(0,0) scale(.7);opacity:0}10%{opacity:.9}50%{transform:translate(28px,-55vh) scale(1)}90%{opacity:.8}100%{transform:translate(-14px,-110vh) scale(1.05);opacity:0}}
+.hero .wrap{z-index:1}
+
+/* continuous sparkle twinkle */
+.tw,.hero .spark.tw{animation:twinkle .9s cubic-bezier(.3,1.5,.5,1) both,twinkleLoop 3.2s 1s ease-in-out infinite}
+@keyframes twinkleLoop{0%,100%{transform:scale(1) rotate(0);opacity:1}50%{transform:scale(.45) rotate(45deg);opacity:.5}}
+
+/* scalloped retro edges */
+.scallop{display:block;width:100%;height:22px;position:relative}
+.scallop-mint{background:radial-gradient(circle at 11px 0,var(--mint-ice) 11px,transparent 11.5px) 0 0/22px 22px repeat-x}
+.scallop-dark{background:radial-gradient(circle at 11px 22px,var(--ink) 11px,transparent 11.5px) 0 0/22px 22px repeat-x;margin-bottom:-1px}
+.scallop-pink{background:radial-gradient(circle at 11px 0,var(--ink) 11px,transparent 11.5px) 0 0/22px 22px repeat-x;background-color:var(--pink);margin-top:-1px}
+
+/* towns marquee */
+.towns{overflow:hidden}
+.towns .wrap{flex-wrap:nowrap}
+.marquee{overflow:hidden;flex:1;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.marquee .track{display:flex;width:max-content;animation:slide 28s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.marquee ul{flex-wrap:nowrap;padding-right:22px}
+.towns li:not(:last-child)::after,.towns li:last-child::after{content:"";width:14px;height:14px;background:var(--mint);
+  clip-path:polygon(50% 0,58% 42%,100% 50%,58% 58%,50% 100%,42% 58%,0 50%,42% 42%)}
+.towns li{white-space:nowrap}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* scroll reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.9,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.12s}.rv-d2{transition-delay:.24s}
+/* about: cat pops up behind the arch, photo zooms gently */
+.arch .peek{transform:translate(-50%,60px);opacity:0;transition:transform .8s cubic-bezier(.3,1.6,.5,1) .35s,opacity .4s .35s;z-index:0}
+.arch.in .peek{transform:translate(-50%,0);opacity:1}
+.arch .frame{z-index:1}
+.arch .frame>img{transform:scale(1.12);transition:transform 1.6s cubic-bezier(.2,.9,.2,1)}
+.arch.in .frame>img{transform:scale(1)}
+.arch .note{animation:wiggle 4s 2s ease-in-out infinite}
+@keyframes wiggle{0%,86%,100%{transform:rotate(4deg)}90%{transform:rotate(-3deg)}94%{transform:rotate(6deg)}}
+.touch div{transition:transform .25s}
+.touch div:hover{transform:translateY(-4px) rotate(-2deg)}
+
+/* services: rays spin, checklist ticks in */
+.services::before{animation:spin 90s linear infinite}
+.panel .pic>img{transition:transform 1.2s ease}
+.panel:hover .pic>img{transform:scale(1.05)}
+.room li::before,.room li::after{transition:transform .4s cubic-bezier(.3,1.6,.5,1),opacity .3s}
+.panel.ticking .room li::before{animation:tickPop .45s calc(var(--i,0)*45ms) cubic-bezier(.3,1.6,.5,1) both}
+.panel.ticking .room li::after{animation:tickDraw .35s calc(var(--i,0)*45ms + .15s) ease both}
+@keyframes tickPop{from{transform:scale(0)}}
+@keyframes tickDraw{from{opacity:0;transform:rotate(45deg) scale(.2)}}
+.panel{animation:panelIn .5s cubic-bezier(.2,.9,.2,1)}
+@keyframes panelIn{from{opacity:0;transform:translateY(14px)}}
+.cuddle img{animation:bob 2.4s ease-in-out infinite}
+.switch button img{transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.switch button:hover img,.switch button[aria-selected="true"] img{transform:rotate(-12deg) scale(1.08)}
+
+/* commitment: rays spin, Lucy sways */
+.commit::before{animation:spin 80s linear infinite}
+.commit .lucy{animation:sway 5s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+.commit .spark{z-index:1}
+
+/* buttons: shine on hover */
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);transform:translateX(-120%);transition:transform .6s}
+.btn:hover::after{transform:translateX(120%)}
+
+/* contact ticket: logo floats, sparkles twinkle */
+.ticket .left img{animation:bob 7s ease-in-out infinite}
+.ticket{transition:transform .4s,box-shadow .4s}
+.ticket:hover{transform:translate(-3px,-3px);box-shadow:14px 14px 0 var(--teal-bright)}
+
+/* sparkle cursor trail */
+.trail{position:fixed;z-index:100;width:14px;height:14px;pointer-events:none;background:var(--c);
+  clip-path:polygon(50% 0,58% 42%,100% 50%,58% 58%,50% 100%,42% 58%,0 50%,42% 42%);animation:trail .8s ease-out forwards}
+@keyframes trail{to{transform:translateY(-26px) scale(0) rotate(90deg);opacity:0}}
+@media (max-width:780px){.halo{inset:-6%}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.hero h1 .ln>span{transform:none}.hero-lede,.hero-ctas,.guarantee{opacity:1}.arch .peek{transform:translate(-50%,0);opacity:1}.bubbles,.trail{display:none}}
+
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -294,10 +410,11 @@ footer .top:hover{background:var(--peach)}
 
 <!-- HERO -->
 <section class="hero">
-  <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span><span class="spark s4"></span>
+  <div class="bubbles" aria-hidden="true"><i style="--d:34px;--x:6%;--t:14s;--delay:0s"></i><i style="--d:18px;--x:18%;--t:11s;--delay:3s"></i><i style="--d:46px;--x:34%;--t:17s;--delay:6s"></i><i style="--d:22px;--x:48%;--t:12s;--delay:1.5s"></i><i style="--d:30px;--x:58%;--t:15s;--delay:8s"></i><i style="--d:16px;--x:70%;--t:10s;--delay:4s"></i><i style="--d:40px;--x:82%;--t:18s;--delay:2s"></i><i style="--d:24px;--x:93%;--t:13s;--delay:7s"></i></div>
+  <span class="spark s1 tw"></span><span class="spark s2"></span><span class="spark s3"></span><span class="spark s4"></span>
   <div class="wrap">
     <div>
-      <h1>Ready to tackle any mess.</h1>
+      <h1><span class="ln"><span>Ready to</span></span><span class="ln"><span>tackle any</span></span><span class="ln"><span>mess.</span></span></h1>
       <p class="hero-lede">Paws Off Cleaning Company is a residential and commercial cleaning business in Edmonton, Alberta. Customized cleaning from a highly trained professional team, with that personal, flexible, consistent and affordable “Paws Off” touch.</p>
       <div class="hero-ctas">
         <a class="btn btn-pink" href="mailto:pawsoffcleaning@gmail.com?subject=Cleaning%20Inquiry!">Get your free quote</a>
@@ -308,7 +425,8 @@ footer .top:hover{background:var(--peach)}
         <span>Every clean is backed by our 100% satisfaction guarantee.</span>
       </div>
     </div>
-    <div class="stage">
+    <div class="stage" id="stage">
+      <div class="halo" aria-hidden="true"></div>
       <div class="hex"></div>
       <div class="hex-in">
         <div class="fallback"><img src="images/logo.png" alt=""></div>
@@ -321,20 +439,23 @@ footer .top:hover{background:var(--peach)}
   </div>
 </section>
 
+<span class="scallop scallop-mint" aria-hidden="true" style="background-color:var(--teal);margin-bottom:-2px"></span>
 <!-- TOWNS -->
 <section class="towns" aria-label="Service area">
   <div class="wrap">
     <h2>Edmonton &amp; area</h2>
-    <ul>
+    <div class="marquee"><div class="track"><ul>
       <li>St. Albert</li><li>Spruce Grove</li><li>Stony Plain</li><li>Fort Saskatchewan</li><li>Sherwood Park</li><li>Leduc</li><li>Beaumont</li>
-    </ul>
+    </ul><ul aria-hidden="true">
+      <li>St. Albert</li><li>Spruce Grove</li><li>Stony Plain</li><li>Fort Saskatchewan</li><li>Sherwood Park</li><li>Leduc</li><li>Beaumont</li>
+    </ul></div></div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="wrap">
-    <div class="arch">
+    <div class="arch rv">
       <img class="peek" src="images/icon-lucy.png" alt="">
       <div class="frame">
         <div class="fallback"><img src="images/icon-bottle.png" alt=""></div>
@@ -343,10 +464,10 @@ footer .top:hover{background:var(--peach)}
       <div class="note">Small but mighty, fast to reply</div>
     </div>
     <div>
-      <h2>About us</h2>
-      <p class="lead">What makes Paws Off different than the larger cleaning companies is our unique business model. We are small but mighty.</p>
+      <h2 class="rv">About us</h2>
+      <p class="lead rv rv-d1">What makes Paws Off different than the larger cleaning companies is our unique business model. We are small but mighty.</p>
       <p>Communication is fast and efficient, and we are dependable and reliable. We want our clients to know that they can not only trust the results of our cleaning service, but feel like they are treated with the utmost respect.</p>
-      <div class="touch" aria-label="The Paws Off touch">
+      <div class="touch rv rv-d2" aria-label="The Paws Off touch">
         <div>Personal</div><div>Flexible</div><div>Consistent</div><div>Affordable</div>
       </div>
       <p class="touch-cap">That’s the “Paws Off” touch.</p>
@@ -355,15 +476,16 @@ footer .top:hover{background:var(--peach)}
   </div>
 </section>
 
+<span class="scallop scallop-dark" aria-hidden="true"></span>
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="wrap">
-    <div class="head">
+    <div class="head rv">
       <h2>Our services</h2>
       <p>With our highly trained professional staff, we listen to your needs and make sure you receive the best possible customized clean.</p>
     </div>
 
-    <div class="switch" role="tablist" aria-label="Service type">
+    <div class="switch rv rv-d1" role="tablist" aria-label="Service type">
       <button role="tab" id="t-res" aria-selected="true" aria-controls="p-res">
         <img src="images/icon-bottle.png" alt="">
         <span><strong>Residential</strong><span>Weekly, bi-weekly, monthly, move out &amp; one time cleaning</span></span>
@@ -439,11 +561,13 @@ footer .top:hover{background:var(--peach)}
 </section>
 
 <!-- COMMITMENT -->
+<span class="scallop scallop-pink" aria-hidden="true"></span>
 <section class="commit" aria-label="Our commitment">
+  <span class="spark tw" style="--s:54px;--c:#fff;top:14%;right:8%"></span><span class="spark tw" style="--s:28px;--c:var(--peach);bottom:18%;right:22%;animation-delay:1.2s"></span><span class="spark tw" style="--s:22px;--c:var(--mint);top:22%;left:30%;animation-delay:.6s"></span>
   <div class="wrap">
     <img class="lucy" src="images/icon-lucy.png" alt="">
     <div>
-      <blockquote>Our commitment to you is to ensure nothing is overlooked.</blockquote>
+      <blockquote class="rv">Our commitment to you is to ensure nothing is overlooked.</blockquote>
       <p>Whether you’re a weekly, bi-weekly, monthly, one time only or deep/move out clean, you’re the home we care about.</p>
     </div>
   </div>
@@ -452,8 +576,8 @@ footer .top:hover{background:var(--peach)}
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap">
-    <div class="ticket">
-      <div class="left"><img src="images/logo.png" alt="Paws Off Cleaning Co. logo"></div>
+    <div class="ticket rv">
+      <div class="left"><span class="spark tw" style="--s:38px;--c:#fff;top:12%;left:12%"></span><span class="spark tw" style="--s:22px;--c:var(--pink);bottom:14%;right:12%;animation-delay:1s"></span><img src="images/logo.png" alt="Paws Off Cleaning Co. logo"></div>
       <div class="right">
         <h2>Contact</h2>
         <p>Our books are currently open and we’re taking on new clients! If you’re interested, contact us to get your free quote.</p>
@@ -506,6 +630,28 @@ footer .top:hover{background:var(--peach)}
     t.addEventListener('click',function(){pick(t)});
     t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var n=tabs[(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length];pick(n);n.focus()}})
   });
+
+  // scroll reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.18});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  // checklist tick-in
+  function tick(panel){panel.querySelectorAll('.room li').forEach(function(li,i){li.style.setProperty('--i',i)});panel.classList.remove('ticking');void panel.offsetWidth;panel.classList.add('ticking')}
+  var pio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){tick(e.target);pio.unobserve(e.target)}})},{threshold:.25});
+  pio.observe(document.getElementById('p-res'));
+  tabs.forEach(function(t){t.addEventListener('click',function(){tick(document.getElementById(t.getAttribute('aria-controls')))})});
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    // gentle tilt on the hero hexagon
+    var st=document.getElementById('stage'),hero=document.querySelector('.hero');
+    hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      st.style.transform='perspective(900px) rotateY('+(x*8)+'deg) rotateX('+(-y*8)+'deg)'});
+    hero.addEventListener('mouseleave',function(){st.style.transform=''});
+    st.addEventListener('animationend',function(e){if(e.target===st)st.style.transition='transform .3s ease-out'});
+    // sparkle trail inside the hero
+    var cols=['#3CB5AA','#DB6487','#F7942D','#A4D4CF'],last=0;
+    hero.addEventListener('mousemove',function(e){var n=Date.now();if(n-last<60)return;last=n;var d=document.createElement('span');d.className='trail';
+      d.style.left=(e.clientX-7)+'px';d.style.top=(e.clientY-7)+'px';d.style.setProperty('--c',cols[Math.random()*4|0]);document.body.appendChild(d);setTimeout(function(){d.remove()},800)});
+  }
   document.getElementById('yr').textContent=new Date().getFullYear();
 })();
 </script>
